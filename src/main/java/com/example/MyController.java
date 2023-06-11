@@ -112,7 +112,7 @@ public class MyController {
 		}
 		// ファイルが選択されているとき
 		try (InputStream content = uploadFile.getContent()) {
-			var utfFileName = new String(fileNameOpt.get().getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
+			var utfFileName = new String(fileName.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
 			Files.copy(content, java.nio.file.Path
 					.of(uploaderRoot + File.separator + uploaderDirName + File.separator + utfFileName));
 			mes.setFileName(utfFileName);
