@@ -104,10 +104,6 @@ public class MyController {
 		var mes = new MessageDTO(loginUserModel.getName(), message, null);
 
 		Optional<String> fileNameOpt = uploadFile.getFileName();
-		/*
-		 * ファイルが選択されてない場合、fileNameOptには""が格納されています。
-		 * なにかの異常で値がnullの場合は、下のようにorElse("")を呼んで""を格納しておきます。
-		 */
 		var fileName = fileNameOpt.orElse("");
 		// ファイルが選択されてないとき
 		if(fileName.equals("")) {
